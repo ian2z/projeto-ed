@@ -11,7 +11,7 @@ print(cabecalho)
 
 ht = HashTable()
 
-ies = input("Informe o IES que deseja buscar: ")
+ies = "UFPB"
 
 # def menu_principal():
 #     while True:

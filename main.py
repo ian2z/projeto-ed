@@ -1,13 +1,17 @@
 from hashtable import *
+from candidato import Candidato
 
-ht = HashTable()
 
 with open("chamada_regular_sisu_2022_2.csv", "r", encoding="latin1") as arquivo:
     cabecalho = arquivo.readline().strip().split(",")
-    data = [linha.strip().split(",") for linha in arquivo]
+    dados = [linha.strip().split(",") for linha in arquivo]
 
 print(cabecalho)
-#print(data)
+#print(dados)
+
+ht = HashTable()
+
+ies = input("Informe o IES que deseja buscar: ")
 
 # def menu_principal():
 #     while True:

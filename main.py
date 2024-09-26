@@ -2,16 +2,31 @@ from hashtable import *
 from candidato import Candidato
 
 
-with open("chamada_regular_sisu_2022_2.csv", "r", encoding="latin1") as arquivo:
-    cabecalho = arquivo.readline().strip().split(",")
-    dados = [linha.strip().split(",") for linha in arquivo]
+with open("chamada_regular_sisu_2022_2.csv", "r", encoding="UTF-8") as arquivo:
+    cabecalho = arquivo.readline().strip().split("|")
+    dados = [linha.strip().split("|") for linha in arquivo]
 
-print(cabecalho)
+#print(cabecalho)
 #print(dados)
 
 ht = HashTable()
 
 ies = "UFPB"
+indice_ies = cabecalho.index("SIGLA_IES")
+
+nome = cabecalho.index("INSCRITO")
+campus = cabecalho.index("NOME_CAMPUS")
+nome_ies = cabecalho.index("NOME_IES")
+teste_ufpb = []
+
+
+for linha in dados:
+    if linha[indice_ies] == ies:
+        teste_ufpb.append(linha[campus])
+
+    
+print(teste_ufpb)
+
 
 # def menu_principal():
 #     while True:
